@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -14,6 +14,12 @@ const Navbar = () => {
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
+    { 
+      name: "Resume", 
+      path: "/resume.pdf", 
+      icon: <FileText className="h-4 w-4 mr-1" />, 
+      isExternal: true 
+    },
   ];
 
   useEffect(() => {
@@ -54,18 +60,31 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full",
-                location.pathname === item.path
-                  ? "text-primary after:w-full"
-                  : "text-muted-foreground"
-              )}
-            >
-              {item.name}
-            </Link>
+            item.isExternal ? (
+              <a
+                key={item.name}
+                href={item.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full flex items-center text-muted-foreground"
+              >
+                {item.icon}
+                {item.name}
+              </a>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full",
+                  location.pathname === item.path
+                    ? "text-primary after:w-full"
+                    : "text-muted-foreground"
+                )}
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -88,18 +107,31 @@ const Navbar = () => {
         <div className="md:hidden bg-background border-b">
           <nav className="container-custom py-4 flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={cn(
-                  "text-base font-medium py-2 transition-colors hover:text-primary",
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                )}
-              >
-                {item.name}
-              </Link>
+              item.isExternal ? (
+                <a
+                  key={item.name}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-base font-medium py-2 transition-colors hover:text-primary text-muted-foreground flex items-center"
+                >
+                  {item.icon}
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={cn(
+                    "text-base font-medium py-2 transition-colors hover:text-primary",
+                    location.pathname === item.path
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
           </nav>
         </div>
