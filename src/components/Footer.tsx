@@ -22,7 +22,7 @@ const Footer = () => {
 
           <div className="flex flex-col items-center md:items-end">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} Sujan Nandi. All rights reserved.
+              &copy; {currentYear} Sujan Nandikol Sunilkumar. All rights reserved.
             </p>
             <div className="mt-1 flex items-center space-x-4">
               <Link 
