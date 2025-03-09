@@ -1,13 +1,100 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import Hero from "@/components/Hero";
+import ProjectCard, { Project } from "@/components/ProjectCard";
+import PageTransition from "@/components/PageTransition";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const featuredProjects: Project[] = [
+  {
+    id: 1,
+    title: "Instagram Ratio Fixer",
+    description: "Analyzes and optimizes Instagram follow ratios using custom algorithms.",
+    techStack: ["Java", "Insta4j", "REST API"],
+    githubUrl: "https://github.com",
+  },
+  {
+    id: 2,
+    title: "Calgentic",
+    description: "AI-powered calendar assistant that helps users manage their time more effectively.",
+    techStack: ["GPT-4o", "Google Calendar API", "JavaScript"],
+    githubUrl: "https://github.com",
+  },
+  {
+    id: 3,
+    title: "Explain Like I'm 5 (ELI5)",
+    description: "Platform that simplifies complex topics using AI to make them accessible to everyone.",
+    techStack: ["Flask", "OpenAI", "Python"],
+    githubUrl: "https://github.com",
+    liveUrl: "https://eli5.example.com",
+  },
+];
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <PageTransition>
+      <main>
+        <Hero />
+        
+        <section id="featured-projects" className="page-section bg-muted/30">
+          <div className="container-custom">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+              <div>
+                <h2 className="h2 mb-4">Featured Projects</h2>
+                <p className="text-muted-foreground max-w-2xl">
+                  A selection of my recent work. These projects showcase my skills and passion for building innovative solutions.
+                </p>
+              </div>
+              
+              <Link 
+                to="/projects" 
+                className="group mt-4 md:mt-0 inline-flex items-center text-sm font-medium text-primary"
+              >
+                View all projects
+                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+        
+        <section className="page-section">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="h2 mb-6">Let's Connect</h2>
+              <p className="text-muted-foreground mb-8">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link 
+                  to="/about"
+                  className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                >
+                  Learn More About Me
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex h-11 items-center justify-center rounded-md border px-6 font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                >
+                  Get In Touch
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </PageTransition>
   );
 };
 
