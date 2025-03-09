@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { 
       name: "Resume", 
-      path: "/resume.pdf", 
+      path: "/resume.pdf",
       icon: <FileText className="h-4 w-4 mr-1" />, 
       isExternal: true 
     },

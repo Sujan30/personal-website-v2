@@ -9,17 +9,17 @@ const SocialLinks = ({ className = "" }: SocialLinksProps) => {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/sujan30",
       icon: Github,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/sujan-nandikol-sunilkumar-94469b162/",
       icon: Linkedin,
     },
     {
-      name: "Twitter",
-      url: "https://twitter.com",
+      name: "X (formerly Twitter)",
+      url: "https://x.com/spottingevs",
       icon: Twitter,
     },
   ];
