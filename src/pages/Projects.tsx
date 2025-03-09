@@ -33,13 +33,6 @@ const projects: Project[] = [
     techStack: ["Flask", "Tweepy", "Python"],
     githubUrl: "https://github.com",
   },
-  {
-    id: 5,
-    title: "Rate My Professor Scraper",
-    description: "Tool that helps SJSU students pick better classes by aggregating and analyzing data from professor ratings.",
-    techStack: ["GraphQL", "Web Scraping", "JavaScript"],
-    githubUrl: "https://github.com",
-  },
 ];
 
 const Projects = () => {

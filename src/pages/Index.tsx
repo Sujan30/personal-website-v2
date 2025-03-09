@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import ProjectCard, { Project } from "@/components/ProjectCard";
 import PageTransition from "@/components/PageTransition";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const featuredProjects: Project[] = [
@@ -69,6 +69,27 @@ const Index = () => {
         </section>
         
         <section className="page-section">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <h2 className="h2 mb-6">My Resume</h2>
+              <p className="text-muted-foreground mb-8">
+                Check out my professional experience, skills, and educational background in detail.
+              </p>
+              
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                <FileText className="mr-2 h-5 w-5" />
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </section>
+        
+        <section className="page-section bg-muted/30">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="h2 mb-6">Let's Connect</h2>
