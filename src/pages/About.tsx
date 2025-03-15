@@ -19,7 +19,7 @@ const About = () => {
     "Neuroscience",
     "Artificial Intelligence",
     "Strength Training",
-    "Shipping Products",
+    "AI Agents",
   ];
 
   return (

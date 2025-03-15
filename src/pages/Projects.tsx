@@ -5,7 +5,7 @@ import ProjectCard, { Project } from "@/components/ProjectCard";
 
 const projects: Project[] = [
   {
-    id: 1,
+    id: 5,
     title: "Instagram Ratio Fixer",
     description: "Analyzes Instagram follow ratios using custom algorithms and provides optimization recommendations for account growth.",
     techStack: ["Java", "Insta4j", "REST API"],
@@ -15,23 +15,32 @@ const projects: Project[] = [
     id: 2,
     title: "Calgentic",
     description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
-    techStack: ["GPT-4o", "Google Calendar API", "JavaScript"],
-    githubUrl: "https://github.com",
+    techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
+    githubUrl: "https://github.com/Sujan30/calgentic-UI",
+    liveUrl: "https://calgentic.com",
   },
   {
     id: 3,
     title: "Explain Like I'm 5 (ELI5)",
     description: "Platform that simplifies complex topics using AI to make them accessible to everyone, regardless of their background knowledge.",
     techStack: ["Flask", "OpenAI", "Python"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://eli5.example.com",
+    githubUrl: "https://github.com/Sujan30/Eli5",
+    liveUrl: "https://sujan30.pythonanywhere.com/",
   },
   {
     id: 4,
-    title: "Twitter Bot for ELI5",
+    title: "Twitter Bot for ELI5 (DEPRECATED, NEW BOT IS BELOW)",
     description: "Automated Twitter bot that shares content from the ELI5 platform, increasing reach and engagement with simplified explanations.",
     techStack: ["Flask", "Tweepy", "Python"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Sujan30/Eli5",
+  },
+  {
+    id: 1,
+    title: "Twitter Bot for Naval Ravikant Quotes",
+    description: "Automated Twitter bot that shares famous Naval Ravikant quotes from the Naval Ravikant API, increasing reach and engagement.",
+    techStack: ["Javascript", "X API", "Node js","Node-cron", "Railway"],
+    githubUrl: "https://github.com/Sujan30/Naval-Wisdom-Bot",
+    liveUrl: "https://x.com/navals_wisdom",
   },
 ];
 
