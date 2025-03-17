@@ -14,7 +14,7 @@ const SocialLinks = ({ className = "" }: SocialLinksProps) => {
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/sujan-nandikol-sunilkumar-94469b162/",
+      url: "https://www.linkedin.com/in/suqjan",
       icon: Linkedin,
     },
     {
