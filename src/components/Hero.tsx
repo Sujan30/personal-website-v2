@@ -1,7 +1,7 @@
 
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
-
+import {Link} from "react-router-dom"
 const Hero = () => {
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("featured-projects");
@@ -48,18 +48,18 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a 
-            href="/projects" 
+          <Link
+            to="/projects" 
             className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             View My Projects
-          </a>
-          <a 
-            href="/contact" 
+          </Link>
+          <Link
+            to="/contact" 
             className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-6 font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             Get In Touch
-          </a>
+          </Link>
         </motion.div>
         
         <motion.button
