@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import PageTransition from "@/components/PageTransition";
 import ProjectCard, { Project } from "@/components/ProjectCard";
+import { Link } from "react-router-dom";
 
 const projects: Project[] = [
   {
@@ -76,12 +77,14 @@ const Projects = () => {
               <p className="text-muted-foreground mb-8">
                 I'm always looking for new challenges and opportunities to collaborate on interesting projects.
               </p>
-              <a 
-                href="/contact" 
-                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-6 font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              >
-                Let's Talk
-              </a>
+              <Link 
+                to="/contact"
+                className="group mt-4 md:mt-0 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  Let's Talk
+                </Link>
+                
+              
             </div>
           </div>
         </section>
