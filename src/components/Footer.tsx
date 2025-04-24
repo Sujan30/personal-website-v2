@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import SocialLinks from "./SocialLinks";
 
@@ -42,6 +41,12 @@ const Footer = () => {
                 className="text-xs text-muted-foreground hover:text-primary"
               >
                 Contact
+              </Link>
+              <Link 
+                to="/blog" 
+                className="text-xs text-muted-foreground hover:text-primary"
+              >
+                Blog
               </Link>
             </div>
           </div>
