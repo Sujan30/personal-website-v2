@@ -43,6 +43,14 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Sujan30/Naval-Wisdom-Bot",
     liveUrl: "https://x.com/navals_wisdom",
   },
+  {
+    id: 6,
+    title: "Canvas AI Agent (NOT DEPLOYED DUE TO LEGAL REASONS)",
+    description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to complete the task. Then an AI workflow is performed where the work of the first agent is reviewed through an AI detector, and based on the similarity score, it will call a second agent that humanizes the text of the first agent, till the work is undetectable. NOT DEPLOYED DUE TO LEGAL REASONS",
+    techStack: ["Python", "Playwright", "AI Agent","Browseruse", "GPT-4o", "Gemini-2.0-Flash"],
+    githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
+    
+  }
 ];
 
 const Projects = () => {
