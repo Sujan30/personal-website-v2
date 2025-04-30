@@ -10,15 +10,16 @@ const featuredProjects: Project[] = [
     id: 1,
     title: "Instagram Ratio Fixer",
     description: "Analyzes and optimizes Instagram follow ratios using custom algorithms.",
-    techStack: ["Java", "Insta4j", "REST API"],
-    githubUrl: "https://github.com",
+    techStack: ["Java", "Insta4j", "REST API"], 
+    githubUrl: "",
   },
   {
     id: 2,
     title: "Calgentic",
     description: "AI-powered calendar assistant that helps users manage their time more effectively.",
     techStack: ["GPT-4o", "Google Calendar API", "JavaScript"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Sujan30/calgentic-v2 ",
+    liveUrl: "https://calgentic.com",
   },
   {
     id: 3,
@@ -26,12 +27,21 @@ const featuredProjects: Project[] = [
     description: "Platform that simplifies complex topics using AI to make them accessible to everyone.",
     techStack: ["Flask", "OpenAI", "Python"],
     githubUrl: "https://github.com",
-    liveUrl: "https://eli5.example.com",
+    liveUrl: "https://sujan30.pythonanywhere.com/",
   },
 ];
 
 // Updated projects data
-const aiProjects = [
+const aiProjects: Array<{
+  id: number;
+  title: string;
+  description: string;
+  url?: string;
+  liveUrl?: string;
+  techStack: string[];
+  isTwitter?: boolean;
+  githubUrl?: string;
+}> = [
   {
     id: 1,
     title: "Naval Ravikant Bot",
@@ -42,12 +52,14 @@ const aiProjects = [
   },
   {
     id: 2,
-    title: "Calgentic",
-    description: "AI-powered calendar assistant that helps users manage their time more effectively through intelligent scheduling and optimization.",
-    url: "https://calgentic.com",
-    techStack: ["GPT-4o", "Google Calendar API", "JavaScript"],
-    isTwitter: false
+    title: "Canvas AI Agent (NOT DEPLOYED DUE TO LEGAL REASONS)",
+    description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to complete the task. Then an AI workflow is performed where the work of the first agent is reviewed through an AI detector, and based on the similarity score, it will call a second agent that humanizes the text of the first agent, till the work is undetectable. NOT DEPLOYED DUE TO LEGAL REASONS",
+    techStack: ["Python", "Playwright", "AI Agent","Browseruse", "GPT-4o", "Gemini-2.0-Flash"],
+    githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
+    url: "https://github.com/Sujan30/canvas-ai-agent",
+    
   },
+  
   {
     id: 3,
     title: "Explain Like I'm 5 (ELI5)",
@@ -101,7 +113,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center justify-start gap-4">
                     <a
-                      href={project.url}
+                      href={project.isTwitter ? project.url : (project.liveUrl || project.url)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-flex items-center text-sm font-medium ${project.isTwitter ? 'text-[#1DA1F2]' : 'text-primary'}`}

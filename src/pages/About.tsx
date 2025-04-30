@@ -10,9 +10,9 @@ const About = () => {
   }, []);
 
   const skills = {
-    languages: ["Java", "Python", "JavaScript (React)"],
+    languages: ["Java", "Python", "JavaScript"],
     frameworks: ["SpringBoot", "Flask", "React"],
-    tools: ["Maven", "Gradle", "IntelliJ", "VS Code", "Cursor"],
+    tools: ["Maven", "Pip", "Playwright", "VS Code", "Cursor"],
   };
 
   const passions = [
@@ -30,7 +30,7 @@ const About = () => {
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h1 className="h1 mb-6">About Me</h1>
               <p className="text-lg text-muted-foreground">
-                Computer science & linguistics student passionate about AI, automation, and building innovative projects.
+                Computer science & linguistics student passionate about AI applications such as AI agents, and building innovative projects for everyday people to use.
               </p>
             </div>
             
@@ -41,7 +41,7 @@ const About = () => {
                   I'm a computer science and linguistics student at San Jose State University, set to graduate in May 2027. My academic journey combines technical expertise with language understanding, allowing me to approach problems from multiple perspectives.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  What drives me is the intersection of technology and human experience. I'm particularly interested in how AI can be leveraged to create tools that genuinely help people and solve real-world problems.
+                  What drives me is the intersection of technology and human experience. I'm particularly interested in how AI can be used to create tools that genuinely help people and solve real-world problems. 
                 </p>
                 <p className="text-muted-foreground">
                   When I'm not coding, I'm either deep-diving into neuroscience research, strength training, or working on shipping my next product.
