@@ -6,14 +6,7 @@ import { Link } from "react-router-dom";
 
 const projects: Project[] = [
   {
-    id: 5,
-    title: "Instagram Ratio Fixer",
-    description: "Analyzes Instagram follow ratios using custom algorithms and provides optimization recommendations for account growth.",
-    techStack: ["Java", "Insta4j", "REST API"],
-    githubUrl: "https://github.com",
-  },
-  {
-    id: 2,
+    id: 1,
     title: "Calgentic",
     description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
     techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
@@ -44,9 +37,9 @@ const projects: Project[] = [
     liveUrl: "https://x.com/navals_wisdom",
   },
   {
-    id: 6,
-    title: "Canvas AI Agent (NOT DEPLOYED DUE TO LEGAL REASONS)",
-    description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to complete the task. Then an AI workflow is performed where the work of the first agent is reviewed through an AI detector, and based on the similarity score, it will call a second agent that humanizes the text of the first agent, till the work is undetectable. NOT DEPLOYED DUE TO LEGAL REASONS",
+    id: 2,
+    title: "Canvas AI Agent (NOT DEPLOYED DUE TO CANVAS  POLICIES)",
+    description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to check the users draft against the rubric. There is a second agent that takes the users draft, and using browseruse and gemini-2.0-flash it access playwright browser and navigates to quillbots AI detector to check if the students work was done by AI. The intended use of this project is to simulate a teacher grading the students assignment, to ensure that students can get the highest grade possible for assignments. ",
     techStack: ["Python", "Playwright", "AI Agent","Browseruse", "GPT-4o", "Gemini-2.0-Flash"],
     githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
     

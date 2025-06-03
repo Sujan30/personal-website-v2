@@ -1,5 +1,6 @@
 
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { NONAME } from "dns";
+import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 interface SocialLinksProps {
   className?: string;
@@ -22,6 +23,11 @@ const SocialLinks = ({ className = "" }: SocialLinksProps) => {
       url: "https://x.com/spottingevs",
       icon: Twitter,
     },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/suqjan_fit",
+      icon: Instagram
+    }
   ];
 
   return (
