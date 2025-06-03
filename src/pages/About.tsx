@@ -10,9 +10,10 @@ const About = () => {
   }, []);
 
   const skills = {
-    languages: ["Java", "Python", "JavaScript"],
-    frameworks: ["SpringBoot", "Flask", "React"],
+    languages: ["Java", "Python", "TypeScript", "JavaScript"],
+    frameworks: [ "Flask", "React"],
     tools: ["Maven", "Pip", "Playwright", "VS Code", "Cursor"],
+    aitools: ["Browseruse", "LangChain", "OpenAI API"]
   };
 
   const passions = [
@@ -95,7 +96,7 @@ const About = () => {
           <div className="container-custom">
             <h2 className="h2 text-center mb-12">Skills & Interests</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="p-6 rounded-lg border bg-card h-full">
                 <h3 className="text-xl font-semibold mb-4">Languages</h3>
                 <ul className="space-y-2">
@@ -130,6 +131,20 @@ const About = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div className="p-6 rounded-lg border bg-card h-full">
+                <h3 className="text-xl font-semibold mb-4">AI Tools</h3>
+                <ul className="space-y-2">
+                  {skills.aitools.map((skill) => (
+                    <li key={skill} className="flex items-center">
+                      <div className="h-2 w-2 rounded-full bg-primary mr-3" />
+                      <span>{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+
+
               </div>
             </div>
             

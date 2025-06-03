@@ -44,11 +44,11 @@ const aiProjects: Array<{
 }> = [
   {
     id: 1,
-    title: "Naval Ravikant Bot",
-    description: "AI-powered Twitter bot that shares wisdom and insights in the style of Naval Ravikant, focusing on wealth, happiness, and philosophy.",
-    url: "https://twitter.com/navals_wisdom",
-    techStack: ["Twitter API", "GPT-4", "Python"],
-    isTwitter: true
+    title: "Calgentic",
+    description: "AI-powered calendar assistant that translates NLP (like english) to creating/finding/managing google calendar events.",
+    techStack: ["GPT-4o", "Google Calendar API", "Typescript", "React", "Python", "Flask (REST API)", "Google Auth", "Render (for deployment)", "Supabase (database)"],
+    githubUrl: "https://github.com/Sujan30/calgentic-UI",
+    liveUrl: "https://calgentic.com",
   },
   {
     id: 2,
