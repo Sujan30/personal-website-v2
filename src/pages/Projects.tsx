@@ -15,7 +15,7 @@ const projects: Project[] = [
   {
     id: 2,
     title: "Google Docs & Calendar MCP server",
-    description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use.",
+    description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use. Wrote documentation, alongside an easy tutorial for how to deploy and use the server.",
     techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github "],
     githubUrl: "https://github.com/Sujan30/docs-mcp-server",
     liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
