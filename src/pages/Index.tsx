@@ -8,25 +8,26 @@ import { Link } from "react-router-dom";
 const featuredProjects: Project[] = [
   {
     id: 1,
-    title: "Instagram Ratio Fixer",
-    description: "Analyzes and optimizes Instagram follow ratios using custom algorithms.",
-    techStack: ["Java", "Insta4j", "REST API"], 
-    githubUrl: "",
+    title: "Calgentic",
+    description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
+    techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
+    githubUrl: "https://github.com/Sujan30/calgentic-UI",
+    liveUrl: "https://calgentic.com",
   },
   {
     id: 2,
-    title: "Calgentic",
-    description: "AI-powered calendar assistant that helps users manage their time more effectively.",
-    techStack: ["GPT-4o", "Google Calendar API", "JavaScript"],
-    githubUrl: "https://github.com/Sujan30/calgentic-v2 ",
-    liveUrl: "https://calgentic.com",
+    title: "Google Docs & Calendar MCP server",
+    description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use.",
+    techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github"],
+    githubUrl: "https://github.com/Sujan30/docs-mcp-server",
+    liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
   },
   {
     id: 3,
     title: "Explain Like I'm 5 (ELI5)",
-    description: "Platform that simplifies complex topics using AI to make them accessible to everyone.",
+    description: "Platform that simplifies complex topics using AI to make them accessible to everyone, regardless of their background knowledge.",
     techStack: ["Flask", "OpenAI", "Python"],
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/Sujan30/Eli5",
     liveUrl: "https://sujan30.pythonanywhere.com/",
   },
 ];
@@ -45,29 +46,27 @@ const aiProjects: Array<{
   {
     id: 1,
     title: "Calgentic",
-    description: "AI-powered calendar assistant that translates NLP (like english) to creating/finding/managing google calendar events.",
-    techStack: ["GPT-4o", "Google Calendar API", "Typescript", "React", "Python", "Flask (REST API)", "Google Auth", "Render (for deployment)", "Supabase (database)"],
+    description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
+    techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
     githubUrl: "https://github.com/Sujan30/calgentic-UI",
     liveUrl: "https://calgentic.com",
   },
   {
     id: 2,
-    title: "Canvas AI Agent (NOT DEPLOYED DUE TO LEGAL REASONS)",
-    description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to complete the task. Then an AI workflow is performed where the work of the first agent is reviewed through an AI detector, and based on the similarity score, it will call a second agent that humanizes the text of the first agent, till the work is undetectable. NOT DEPLOYED DUE TO LEGAL REASONS",
-    techStack: ["Python", "Playwright", "AI Agent","Browseruse", "GPT-4o", "Gemini-2.0-Flash"],
-    githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
-    url: "https://github.com/Sujan30/canvas-ai-agent",
-    
+    title: "Google Docs & Calendar MCP server",
+    description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use.",
+    techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github"],
+    githubUrl: "https://github.com/Sujan30/docs-mcp-server",
+    liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
   },
-  
   {
     id: 3,
     title: "Explain Like I'm 5 (ELI5)",
     description: "Platform that simplifies complex topics using AI to make them accessible to everyone, regardless of their background knowledge.",
-    url: "https://sujan30.pythonanywhere.com/",
     techStack: ["Flask", "OpenAI", "Python"],
-    isTwitter: false
-  },
+    githubUrl: "https://github.com/Sujan30/Eli5",
+    liveUrl: "https://sujan30.pythonanywhere.com/",
+  }
 ];
 
 const Index = () => {

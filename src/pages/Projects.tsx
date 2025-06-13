@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import PageTransition from "@/components/PageTransition";
 import ProjectCard, { Project } from "@/components/ProjectCard";
@@ -12,6 +11,14 @@ const projects: Project[] = [
     techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
     githubUrl: "https://github.com/Sujan30/calgentic-UI",
     liveUrl: "https://calgentic.com",
+  },
+  {
+    id: 2,
+    title: "Google Docs & Calendar MCP server",
+    description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use.",
+    techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github "],
+    githubUrl: "https://github.com/Sujan30/docs-mcp-server",
+    liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
   },
   {
     id: 3,
@@ -29,7 +36,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Sujan30/Eli5",
   },
   {
-    id: 1,
+    id: 5,
     title: "Twitter Bot for Naval Ravikant Quotes",
     description: "Automated Twitter bot that shares famous Naval Ravikant quotes from the Naval Ravikant API, increasing reach and engagement.",
     techStack: ["Javascript", "X API", "Node js","Node-cron", "Railway"],
@@ -37,12 +44,11 @@ const projects: Project[] = [
     liveUrl: "https://x.com/navals_wisdom",
   },
   {
-    id: 2,
+    id: 6,
     title: "Canvas AI Agent (NOT DEPLOYED DUE TO CANVAS  POLICIES)",
     description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to check the users draft against the rubric. There is a second agent that takes the users draft, and using browseruse and gemini-2.0-flash it access playwright browser and navigates to quillbots AI detector to check if the students work was done by AI. The intended use of this project is to simulate a teacher grading the students assignment, to ensure that students can get the highest grade possible for assignments. ",
     techStack: ["Python", "Playwright", "AI Agent","Browseruse", "GPT-4o", "Gemini-2.0-Flash"],
     githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
-    
   }
 ];
 
