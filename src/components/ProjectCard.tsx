@@ -10,6 +10,7 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   imageUrl?: string;
+  impact?: string;
 }
 
 interface ProjectCardProps {
@@ -74,6 +75,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             {tech}
           </span>
         ))}
+      <br/>
+      <div className="mt-2 mb-4 text-muted-foreground flex-grow">
+        Impact: {project.impact}
+
+      </div>
       </div>
     </motion.div>
   );

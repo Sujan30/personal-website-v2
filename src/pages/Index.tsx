@@ -13,6 +13,7 @@ const featuredProjects: Project[] = [
     techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
     githubUrl: "https://github.com/Sujan30/calgentic-UI",
     liveUrl: "https://calgentic.com",
+    impact: "Drove over 35,000 impressions across Instagram and Tik Tok platforms marketing this project. Have about 20 monthly users. "
   },
   {
     id: 2,
@@ -21,52 +22,17 @@ const featuredProjects: Project[] = [
     techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github"],
     githubUrl: "https://github.com/Sujan30/docs-mcp-server",
     liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
+    impact: "Drove over 2,000 social media impressions. Got about 6 unique users. "
   },
   {
     id: 3,
     title: "Explain Like I'm 5 (ELI5)",
     description: "Platform that simplifies complex topics using AI to make them accessible to everyone, regardless of their background knowledge.",
-    techStack: ["Flask", "OpenAI", "Python"],
+    techStack: ["Flask", "OpenAI", "Python", "PythonAnywhere (Deployment)"],
     githubUrl: "https://github.com/Sujan30/Eli5",
     liveUrl: "https://sujan30.pythonanywhere.com/",
+    impact: "Consistently driving over 250+ visits each month over the course of 4 months. "
   },
-];
-
-// Updated projects data
-const aiProjects: Array<{
-  id: number;
-  title: string;
-  description: string;
-  url?: string;
-  liveUrl?: string;
-  techStack: string[];
-  isTwitter?: boolean;
-  githubUrl?: string;
-}> = [
-  {
-    id: 1,
-    title: "Calgentic",
-    description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
-    techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
-    githubUrl: "https://github.com/Sujan30/calgentic-UI",
-    liveUrl: "https://calgentic.com",
-  },
-  {
-    id: 2,
-    title: "Google Docs & Calendar MCP server",
-    description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use.",
-    techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github"],
-    githubUrl: "https://github.com/Sujan30/docs-mcp-server",
-    liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
-  },
-  {
-    id: 3,
-    title: "Explain Like I'm 5 (ELI5)",
-    description: "Platform that simplifies complex topics using AI to make them accessible to everyone, regardless of their background knowledge.",
-    techStack: ["Flask", "OpenAI", "Python"],
-    githubUrl: "https://github.com/Sujan30/Eli5",
-    liveUrl: "https://sujan30.pythonanywhere.com/",
-  }
 ];
 
 const Index = () => {
@@ -79,54 +45,7 @@ const Index = () => {
       <main>
         <Hero />
         
-        {/* AI Projects Section */}
-        <section id="ai-projects" className="page-section">
-          <div className="container-custom">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
-              <div>
-                <h2 className="h2 mb-4">AI Projects</h2>
-                <p className="text-muted-foreground max-w-2xl">
-                  Innovative AI-powered applications and platforms I've developed to solve real-world problems.
-                </p>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {aiProjects.map((project, index) => (
-                <div key={project.id} className="group relative overflow-hidden rounded-lg border bg-background p-6 transition-all hover:shadow-md">
-                  <div className="mb-4 flex items-center">
-                    {project.isTwitter ? (
-                      <Twitter className="h-5 w-5 mr-2 text-[#1DA1F2]" />
-                    ) : (
-                      <Globe className="h-5 w-5 mr-2 text-primary" />
-                    )}
-                    <h3 className="text-xl font-semibold">{project.title}</h3>
-                  </div>
-                  <p className="mb-4 text-muted-foreground">{project.description}</p>
-                  <div className="mb-6 flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                      <span key={tech} className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-start gap-4">
-                    <a
-                      href={project.isTwitter ? project.url : (project.liveUrl || project.url)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-flex items-center text-sm font-medium ${project.isTwitter ? 'text-[#1DA1F2]' : 'text-primary'}`}
-                    >
-                      {project.isTwitter ? 'Follow on Twitter' : 'Visit Website'}
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        
+        {/* Featured Projects Section */}
         <section id="featured-projects" className="page-section bg-muted/30">
           <div className="container-custom">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
@@ -153,6 +72,7 @@ const Index = () => {
             </div>
           </div>
         </section>
+        
         
         <section className="page-section">
           <div className="container-custom">

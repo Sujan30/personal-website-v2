@@ -31,7 +31,7 @@ const SocialLinks = ({ className = "" }: SocialLinksProps) => {
   ];
 
   return (
-    <div className={`flex items-center space-x-4 ${className}`}>
+    <div className={`flex items-center justify-center space-x-4 ${className}`}>
       {socialLinks.map((social) => (
         <a
           key={social.name}

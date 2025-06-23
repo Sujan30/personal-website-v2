@@ -11,6 +11,7 @@ const projects: Project[] = [
     techStack: ["GPT-4o", "Google Calendar API", "Typescript", "Shadcn UI", "Python", "Flask", "Google Auth", "Render (for deployment)"],
     githubUrl: "https://github.com/Sujan30/calgentic-UI",
     liveUrl: "https://calgentic.com",
+    impact: "Drove over 35,000 impressions across Instagram and Tik Tok platforms marketing this project. Have about 20 monthly users. "
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const projects: Project[] = [
     techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github "],
     githubUrl: "https://github.com/Sujan30/docs-mcp-server",
     liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
+    impact: "Drove over 2,000 social media impressions. Got about 6 unique users. "
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const projects: Project[] = [
     techStack: ["Flask", "OpenAI", "Python"],
     githubUrl: "https://github.com/Sujan30/Eli5",
     liveUrl: "https://sujan30.pythonanywhere.com/",
+    impact: "Consistently driving over 250+ visits each month over the course of 4 months. "
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const projects: Project[] = [
     description: "Automated Twitter bot that shares content from the ELI5 platform, increasing reach and engagement with simplified explanations.",
     techStack: ["Flask", "Tweepy", "Python"],
     githubUrl: "https://github.com/Sujan30/Eli5",
+    impact: "The infamous ELI5 bot, lived a solid 2 months, gaining over 800 impressions. Went a little out of control, so it had to be shut down :/"
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const projects: Project[] = [
     techStack: ["Javascript", "X API", "Node js","Node-cron", "Railway"],
     githubUrl: "https://github.com/Sujan30/Naval-Wisdom-Bot",
     liveUrl: "https://x.com/navals_wisdom",
+    impact: "Drove over 1000 X impressions! This bot is now deprecated, rest in peace, Navals Wisdom :/"
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const projects: Project[] = [
     description: "Built a tool that accesses your canvas account, gets assignment details. Uses assignment details as instructions for the first agent to check the users draft against the rubric. There is a second agent that takes the users draft, and using browseruse and gemini-2.0-flash it access playwright browser and navigates to quillbots AI detector to check if the students work was done by AI. The intended use of this project is to simulate a teacher grading the students assignment, to ensure that students can get the highest grade possible for assignments. ",
     techStack: ["Python", "Playwright", "AI Agent","Browseruse", "GPT-4o", "Gemini-2.0-Flash"],
     githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
+    impact: "Project was never deployed, but got over 5,000 impressions on Tik Tok!"
   }
 ];
 
