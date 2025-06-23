@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/react"
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => {
           </AnimatePresence>
           <Footer />
         </BrowserRouter>
+        <Analytics/>
       </TooltipProvider>
     </QueryClientProvider>
   );
