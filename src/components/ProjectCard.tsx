@@ -7,7 +7,7 @@ export interface Project {
   title: string;
   description: string;
   techStack: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   imageUrl?: string;
   impact?: string;
@@ -33,29 +33,33 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           Project {index + 1}
         </div>
         
-        <div className="flex items-center space-x-2">
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md border transition-colors hover:bg-muted hover:text-primary"
-            aria-label="GitHub repository"
-          >
-            <Github className="h-4 w-4" />
-          </a>
-          
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-md border transition-colors hover:bg-muted hover:text-primary"
-              aria-label="Live demo"
-            >
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
-          )}
-        </div>
+        {(project.githubUrl || project.liveUrl) && (
+          <div className="flex items-center space-x-2">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-md border transition-colors hover:bg-muted hover:text-primary"
+                aria-label="GitHub repository"
+              >
+                <Github className="h-4 w-4" />
+              </a>
+            )}
+            
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-md border transition-colors hover:bg-muted hover:text-primary"
+                aria-label="Live demo"
+              >
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
+          </div>
+        )}
       </div>
       
       <h3 className="text-xl font-semibold tracking-tight group-hover:text-primary transition-colors">
@@ -75,12 +79,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             {tech}
           </span>
         ))}
-      <br/>
-      <div className="mt-2 mb-4 text-muted-foreground flex-grow">
-        Impact: {project.impact}
-
       </div>
-      </div>
+      
+      {project.impact && (
+        <p className="mt-3 text-sm text-muted-foreground">
+          Impact: {project.impact}
+        </p>
+      )}
     </motion.div>
   );
 };

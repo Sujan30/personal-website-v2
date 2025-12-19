@@ -14,6 +14,24 @@ const projects: Project[] = [
     impact: "Drove over 35,000 impressions across Instagram and Tik Tok platforms marketing this project. Have about 20 monthly users. "
   },
   {
+    id: 7,
+    title: "Internship Matcher",
+    description: "Full-stack internship matching platform that ingests 1,000+ postings, parses resumes with LLMs, and ranks roles using semantic matching with caching and daily refreshes.",
+    techStack: ["FastAPI", "React", "AWS EC2", "AWS S3", "Redis", "SQLite", "LLM Resume Parsing"],
+    githubUrl: "https://github.com/shirinalapati/Internship-App/",
+    liveUrl: "https://internshipmatcher.com",
+    impact: "Drove over 10,000 impressions on LinkedIn and got over a 100 active users."
+  },
+  {
+    id: 8,
+    title: "Viralize - Marketing AI Agent",
+    description: "End-to-end social media content generator that researches a company website, writes targeted scripts, and produces short-form videos optimized for TikTok/Instagram.",
+    techStack: ["Playwright", "LangChain", "FastAPI", "Research Agents", "Video Generation"],
+    liveUrl: "https://www.linkedin.com/pulse/lindy-30-ai-hack-recap-sf-august-2025-michael-raspuzzi-oma8c/",
+    impact: "Built in ~6 hours; reduced marketing workflow from ~30+ minutes to ~3 minutes. Won 2nd place (\"Coolest Build\") out of 35 teams at a hackathon."
+
+  },
+  {
     id: 2,
     title: "Google Docs & Calendar MCP server",
     description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use. Wrote documentation, alongside an easy tutorial for how to deploy and use the server.",
@@ -33,7 +51,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Twitter Bot for ELI5 (DEPRECATED, NEW BOT IS BELOW)",
+    title: "Twitter Bot for ELI5 ",
     description: "Automated Twitter bot that shares content from the ELI5 platform, increasing reach and engagement with simplified explanations.",
     techStack: ["Flask", "Tweepy", "Python"],
     githubUrl: "https://github.com/Sujan30/Eli5",
@@ -41,7 +59,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: "Twitter Bot for Naval Ravikant Quotes",
+    title: "Twitter Bot for Naval Ravikant Quotes (DEPRECATED, NEW BOT IS BELOW)",
     description: "Automated Twitter bot that shares famous Naval Ravikant quotes from the Naval Ravikant API, increasing reach and engagement.",
     techStack: ["Javascript", "X API", "Node js","Node-cron", "Railway"],
     githubUrl: "https://github.com/Sujan30/Naval-Wisdom-Bot",

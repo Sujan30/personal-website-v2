@@ -31,6 +31,12 @@ const Footer = () => {
                 Projects
               </Link>
               <Link 
+                to="/experience" 
+                className="text-xs text-muted-foreground hover:text-primary"
+              >
+                Experience
+              </Link>
+              <Link 
                 to="/about" 
                 className="text-xs text-muted-foreground hover:text-primary"
               >
