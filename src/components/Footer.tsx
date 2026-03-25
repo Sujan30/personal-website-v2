@@ -1,60 +1,60 @@
 import { Link } from "react-router-dom";
-import SocialLinks from "./SocialLinks";
+import { Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t py-12">
+    <footer className="border-t border-white/[0.05] py-10">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start">
-            <Link to="/" className="text-xl font-semibold">
-              Sujan.
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div>
+            <Link to="/" className="text-base font-bold text-white hover:text-primary transition-colors">
+              sujan.
             </Link>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Building innovative solutions with code.
+            <p className="mt-1 text-xs text-zinc-600 font-mono-custom">
+              CS @ SJSU · Neurotech & AI
             </p>
           </div>
 
-          <SocialLinks />
+          <div className="flex items-center gap-6">
+            {[
+              { label: "Projects", to: "/projects" },
+              { label: "Experience", to: "/experience" },
+              { label: "About", to: "/about" },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                to={item.to}
+                className="text-xs font-semibold tracking-[0.12em] uppercase text-zinc-600 hover:text-white transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-          <div className="flex flex-col items-center md:items-end">
-            <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} Sujan Nandikol Sunilkumar. All rights reserved.
-            </p>
-            <div className="mt-1 flex items-center space-x-4">
-              <Link 
-                to="/projects" 
-                className="text-xs text-muted-foreground hover:text-primary"
-              >
-                Projects
-              </Link>
-              <Link 
-                to="/experience" 
-                className="text-xs text-muted-foreground hover:text-primary"
-              >
-                Experience
-              </Link>
-              <Link 
-                to="/about" 
-                className="text-xs text-muted-foreground hover:text-primary"
-              >
-                About
-              </Link>
-              <Link 
-                to="/contact" 
-                className="text-xs text-muted-foreground hover:text-primary"
-              >
-                Contact
-              </Link>
-              <Link 
-                to="/blog" 
-                className="text-xs text-muted-foreground hover:text-primary"
-              >
-                Blog
-              </Link>
-            </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/Sujan30"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-600 hover:text-white transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+            <a
+              href="https://linkedin.com/in/suqjan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-600 hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <span className="text-xs text-zinc-700 font-mono-custom">
+              © {currentYear}
+            </span>
           </div>
         </div>
       </div>

@@ -1,42 +1,46 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  /* Use dark mode values as default for both light and dark modes */
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Pure black background */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Electric blue as primary */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 9%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
+
+    /* Electric blue raw values for use in rgba() */
+    --blue: 59 130 246;
   }
 }
 
@@ -47,6 +51,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -59,32 +64,56 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg;
+    @apply bg-white/[0.03] backdrop-blur-lg border border-white/[0.07] shadow-lg;
   }
-  
+
+  /* Composio-style eyebrow label */
+  .label-eyebrow {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase text-primary;
+  }
+
+  /* Monospace utility */
+  .font-mono-custom {
+    font-family: 'Geist Mono', 'Fira Code', monospace;
+  }
+
   .h1 {
-    @apply text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl;
+    @apply text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl;
+    font-family: 'Geist', system-ui, sans-serif;
   }
-  
+
   .h2 {
-    @apply text-3xl font-bold tracking-tight sm:text-4xl;
+    @apply text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl;
   }
-  
+
   .h3 {
     @apply text-2xl font-bold tracking-tight sm:text-3xl;
   }
-  
+
   .h4 {
     @apply text-xl font-semibold tracking-tight;
   }
-  
+
   .container-custom {
-    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .page-section {
-    @apply py-12 md:py-24;
+    @apply py-16 md:py-28;
+  }
+
+  /* Blue glow effect for accented elements */
+  .blue-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+
+  /* Subtle grid background pattern */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 }

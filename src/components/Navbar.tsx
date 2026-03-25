@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, FileText } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -9,33 +9,19 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Home", path: "/" },
     { name: "Projects", path: "/projects" },
     { name: "Experience", path: "/experience" },
     { name: "About", path: "/about" },
-    { 
-      name: "Resume", 
-      path: "/resume.pdf",
-      icon: <FileText className="h-4 w-4 mr-1" />, 
-      isExternal: true 
-    },
+    { name: "Resume", path: "/resume.pdf", isExternal: true },
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    // Close mobile menu when route changes
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
@@ -44,30 +30,30 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out",
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b"
+          ? "bg-black/80 backdrop-blur-xl border-b border-white/[0.06]"
           : "bg-transparent"
       )}
     >
-      <div className="container-custom flex items-center justify-between h-16">
+      <div className="container-custom flex items-center justify-between h-14">
+        {/* Logo */}
         <Link
           to="/"
-          className="font-semibold text-xl relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+          className="font-bold text-lg tracking-tight text-white hover:text-primary transition-colors"
         >
-          Sujan.
+          sujan.
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) => (
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) =>
             item.isExternal ? (
               <a
                 key={item.name}
                 href={item.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full flex items-center text-muted-foreground"
+                className="text-xs font-semibold tracking-[0.15em] uppercase text-zinc-400 hover:text-white transition-colors"
               >
-                {item.icon}
                 {item.name}
               </a>
             ) : (
@@ -75,46 +61,49 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all hover:after:w-full",
+                  "text-xs font-semibold tracking-[0.15em] uppercase transition-colors",
                   location.pathname === item.path
-                    ? "text-primary after:w-full"
-                    : "text-muted-foreground"
+                    ? "text-primary"
+                    : "text-zinc-400 hover:text-white"
                 )}
               >
                 {item.name}
               </Link>
             )
-          ))}
+          )}
+
+          {/* CTA button */}
+          <a
+            href="mailto:sujan.nandikolsunilkumar@sjsu.edu"
+            className="inline-flex items-center justify-center h-8 px-4 rounded text-xs font-semibold tracking-[0.1em] uppercase bg-primary text-black hover:bg-primary/90 transition-colors"
+          >
+            Contact
+          </a>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile toggle */}
         <button
-          className="md:hidden"
+          className="md:hidden text-zinc-400 hover:text-white transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
         >
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
+          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background border-b">
-          <nav className="container-custom py-4 flex flex-col space-y-4">
-            {navItems.map((item) => (
+        <div className="md:hidden bg-black border-b border-white/[0.06]">
+          <nav className="container-custom py-5 flex flex-col gap-5">
+            {navItems.map((item) =>
               item.isExternal ? (
                 <a
                   key={item.name}
                   href={item.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-medium py-2 transition-colors hover:text-primary text-muted-foreground flex items-center"
+                  className="text-xs font-semibold tracking-[0.15em] uppercase text-zinc-400 hover:text-white transition-colors"
                 >
-                  {item.icon}
                   {item.name}
                 </a>
               ) : (
@@ -122,16 +111,14 @@ const Navbar = () => {
                   key={item.name}
                   to={item.path}
                   className={cn(
-                    "text-base font-medium py-2 transition-colors hover:text-primary",
-                    location.pathname === item.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                    "text-xs font-semibold tracking-[0.15em] uppercase transition-colors",
+                    location.pathname === item.path ? "text-primary" : "text-zinc-400"
                   )}
                 >
                   {item.name}
                 </Link>
               )
-            ))}
+            )}
           </nav>
         </div>
       )}

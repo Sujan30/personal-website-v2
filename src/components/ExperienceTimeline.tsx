@@ -1,57 +1,46 @@
-import { Briefcase } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ExperienceItem } from "@/data/experience";
 
 type Props = {
   items: ExperienceItem[];
-  /**
-   * - "full": show all highlights + location
-   * - "compact": show 2 highlights + hide location
-   */
   variant?: "full" | "compact";
   className?: string;
 };
 
-export default function ExperienceTimeline({
-  items,
-  variant = "full",
-  className,
-}: Props) {
+export default function ExperienceTimeline({ items, variant = "full", className }: Props) {
   const bulletCount = variant === "compact" ? 2 : undefined;
 
   return (
-    <ol className={cn("relative border-l pl-6 md:pl-8", className)}>
+    <ol className={cn("relative border-l border-white/[0.07] pl-6 md:pl-8", className)}>
       {items.map((exp) => (
         <li key={`${exp.company}-${exp.role}`} className="relative pb-10 last:pb-0">
-          {/* timeline node */}
-          <span className="absolute -left-[13px] top-[-2px] flex h-6 w-6 items-center justify-center rounded-full border bg-background">
-            <Briefcase className="h-3.5 w-3.5 text-primary" />
-          </span>
+          {/* Timeline dot */}
+          <span className="absolute -left-[5px] top-[6px] h-2.5 w-2.5 rounded-full bg-primary/60 border border-primary/30" />
 
-          <div className="flex flex-col gap-1">
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              <span className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground">
+          <div className="flex flex-col gap-1.5">
+            {/* Date + company */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="font-mono-custom text-xs text-zinc-500 tracking-wide">
                 {exp.dates}
               </span>
-              <span className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">{exp.company}</span>
-                {variant === "full" && (
-                  <>
-                    {" • "}
-                    {exp.location}
-                  </>
-                )}
-              </span>
+              <span className="text-xs text-zinc-600">·</span>
+              <span className="text-sm font-semibold text-white">{exp.company}</span>
+              {variant === "full" && (
+                <span className="text-xs text-zinc-500">{exp.location}</span>
+              )}
             </div>
 
-            <h3 className="text-xl font-semibold tracking-tight">{exp.role}</h3>
+            {/* Role */}
+            <h3 className="text-base font-semibold text-zinc-200 tracking-tight">{exp.role}</h3>
 
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground list-disc pl-5">
-              {(bulletCount ? exp.highlights.slice(0, bulletCount) : exp.highlights).map(
-                (h) => (
-                  <li key={h}>{h}</li>
-                )
-              )}
+            {/* Highlights */}
+            <ul className="mt-2 space-y-1.5 text-sm text-zinc-400">
+              {(bulletCount ? exp.highlights.slice(0, bulletCount) : exp.highlights).map((h) => (
+                <li key={h} className="flex gap-2">
+                  <span className="text-primary/50 mt-1.5 flex-shrink-0">—</span>
+                  <span>{h}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </li>
@@ -59,5 +48,3 @@ export default function ExperienceTimeline({
     </ol>
   );
 }
-
-

@@ -5,6 +5,15 @@ import { Link } from "react-router-dom";
 
 const projects: Project[] = [
   {
+    id: 7,
+    title: "Internship Matcher",
+    description: "Full-stack internship matching platform that ingests 1,000+ postings, parses resumes with LLMs, and ranks roles using semantic matching with caching and daily refreshes.",
+    techStack: ["FastAPI", "React", "AWS EC2", "AWS S3", "Redis", "SQLite", "LLM Resume Parsing"],
+    githubUrl: "https://github.com/shirinalapati/Internship-App/",
+    liveUrl: "https://internshipmatcher.com",
+    impact: "Drove over 10,000 impressions on LinkedIn and got over a 100 active users."
+  },
+  {
     id: 1,
     title: "Calgentic",
     description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
@@ -14,13 +23,12 @@ const projects: Project[] = [
     impact: "Drove over 35,000 impressions across Instagram and Tik Tok platforms marketing this project. Have about 20 monthly users. "
   },
   {
-    id: 7,
-    title: "Internship Matcher",
-    description: "Full-stack internship matching platform that ingests 1,000+ postings, parses resumes with LLMs, and ranks roles using semantic matching with caching and daily refreshes.",
-    techStack: ["FastAPI", "React", "AWS EC2", "AWS S3", "Redis", "SQLite", "LLM Resume Parsing"],
-    githubUrl: "https://github.com/shirinalapati/Internship-App/",
-    liveUrl: "https://internshipmatcher.com",
-    impact: "Drove over 10,000 impressions on LinkedIn and got over a 100 active users."
+    id: 9,
+    title: "Sleep-PSG Scoring",
+    description: "Automated polysomnography scoring platform that classifies EEG sleep stages using signal processing and ML — from raw EDF files to live hypnogram visualization.",
+    techStack: ["FastAPI", "MNE-Python", "React", "Redis", "Scikit-Learn", "WebSocket"],
+    githubUrl: "https://github.com/Sujan30/sleep-psg",
+    impact: "98% reduction in annotation time (2+ hrs → <2 min). 83% balanced accuracy across sleep stages.",
   },
   {
     id: 8,
@@ -37,21 +45,19 @@ const projects: Project[] = [
     description: "Built a custom MCP server using FastMcp alongside google calendar/docs API to allow AI agents to access and modify google docs and calendar. Deployed for use. Wrote documentation, alongside an easy tutorial for how to deploy and use the server.",
     techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API", "Github "],
     githubUrl: "https://github.com/Sujan30/docs-mcp-server",
-    liveUrl: "https://google-docs-calendar-mcp-server.onrender.com/",
     impact: "Drove over 2,000 social media impressions. Got about 6 unique users. "
   },
   {
     id: 3,
-    title: "Explain Like I'm 5 (ELI5)",
+    title: "Explain Like I'm 5 (ELI5) [REDACTED]",
     description: "Platform that simplifies complex topics using AI to make them accessible to everyone, regardless of their background knowledge.",
     techStack: ["Flask", "OpenAI", "Python"],
     githubUrl: "https://github.com/Sujan30/Eli5",
-    liveUrl: "https://sujan30.pythonanywhere.com/",
     impact: "Consistently driving over 250+ visits each month over the course of 4 months. "
   },
   {
     id: 4,
-    title: "Twitter Bot for ELI5 ",
+    title: "Twitter Bot for ELI5 [GOT BANNED]",
     description: "Automated Twitter bot that shares content from the ELI5 platform, increasing reach and engagement with simplified explanations.",
     techStack: ["Flask", "Tweepy", "Python"],
     githubUrl: "https://github.com/Sujan30/Eli5",
