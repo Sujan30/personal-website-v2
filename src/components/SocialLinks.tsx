@@ -1,5 +1,4 @@
 
-import { NONAME } from "dns";
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
 interface SocialLinksProps {

@@ -2,25 +2,14 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Index from "./pages/Index";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import Experience from "./pages/Experience";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import NotFound from "./pages/NotFound";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import SplitLayout from "./components/layout/SplitLayout";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Force dark mode
   useEffect(() => {
     document.documentElement.classList.add('dark');
   }, []);
@@ -31,22 +20,12 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Navbar />
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </AnimatePresence>
-          <Footer />
+          <Routes>
+            <Route path="/" element={<SplitLayout />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </BrowserRouter>
-        <Analytics/>
+        <Analytics />
       </TooltipProvider>
     </QueryClientProvider>
   );

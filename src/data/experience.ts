@@ -4,11 +4,24 @@ export type ExperienceItem = {
   location: string;
   dates: string;
   highlights: string[];
+  url?: string;
 };
 
 export const experiences: ExperienceItem[] = [
   {
+    company: "IDEAS at SJSU",
+    url: "https://ideaswebsite.vercel.app/",
+    role: "Director of Web Development",
+    location: "San Jose, CA",
+    dates: "August 2025 – Present",
+    highlights: [
+      "Led a 6-person team of CS students to design, build, and deploy the IDEAS at SJSU organization website end-to-end, owning the full lifecycle from Figma mockups to React production deployment on Vercel.",
+      "Coached teammates new to web development on Git workflows, React fundamentals, and code review practices via weekly Monday standups, unblocking frontend, backend, and UI/UX subteams.",
+    ],
+  },
+  {
     company: "Burnt (YC S25)",
+    url: "https://www.getburnt.ai/",
     role: "Full Stack Developer Intern",
     location: "San Jose, CA",
     dates: "July 2025 - September 2025",
@@ -21,6 +34,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     company: "SJSU College of Engineering",
+    url: "https://sce.sjsu.edu/",
     role: "Software Engineering Intern",
     location: "San Jose, CA",
     dates: "June 2025 - August 2025",
@@ -32,6 +46,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     company: "SJSU Software & Computer Engineering Society",
+    url: "https://sce.sjsu.edu/",
     role: "Software Engineering Intern",
     location: "San Jose, CA",
     dates: "Feb 2025 – Present",
