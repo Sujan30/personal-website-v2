@@ -17,11 +17,11 @@
     --primary: 199 89% 61%;
     --primary-foreground: 240 6% 4%;
 
-    --secondary: 240 6% 8%;
+    --secondary: 240 6% 9%;
     --secondary-foreground: 213 31% 91%;
 
-    --muted: 240 6% 8%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 6% 9%;
+    --muted-foreground: 215 16% 57%;
 
     --accent: 199 89% 61%;
     --accent-foreground: 240 6% 4%;
@@ -29,8 +29,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 12%;
-    --input: 240 6% 12%;
+    --border: 240 6% 13%;
+    --input: 240 6% 13%;
     --ring: 199 89% 61%;
 
     --radius: 0.5rem;
@@ -99,8 +99,8 @@
     @apply py-16 md:py-28;
   }
 
-  .sky-glow {
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+  .accent-glow {
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.15);
   }
 
   /* Subtle grid background pattern */

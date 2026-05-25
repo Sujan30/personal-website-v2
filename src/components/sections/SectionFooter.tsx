@@ -7,7 +7,7 @@ export default function SectionFooter() {
           href="https://github.com/Sujan30"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-sky-400 transition-colors duration-150"
+          className="hover:text-accent transition-colors duration-150"
         >
           Source on GitHub →
         </a>

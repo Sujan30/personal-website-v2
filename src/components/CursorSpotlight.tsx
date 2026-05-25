@@ -11,9 +11,9 @@ export function CursorSpotlight() {
 
     const onMove = (e: MouseEvent) => {
       el.style.background = `radial-gradient(
-        600px circle at ${e.clientX}px ${e.clientY}px,
-        rgba(56, 189, 248, 0.10),
-        transparent 70%
+        600px at ${e.clientX}px ${e.clientY}px,
+        rgba(56, 189, 248, 0.08),
+        transparent 80%
       )`;
     };
 
@@ -25,7 +25,7 @@ export function CursorSpotlight() {
     <div
       ref={spotRef}
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-30 transition-[background] duration-300"
+      className="pointer-events-none fixed inset-0 z-30 hidden lg:block transition-[background] duration-300"
     />
   );
 }

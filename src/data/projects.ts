@@ -1,98 +1,205 @@
-export interface Project {
-  id: number;
+export type ProjectDisplay =
+  | { type: 'hero'; metric: string; metricLabel: string; subStat?: string }
+  | { type: 'sidebar'; stats: { value: string; label: string }[] }
+  | { type: 'scoreboard'; stats: { value: string; label: string }[] }
+  | { type: 'transform'; before: string; after: string; caption: string; subStats?: { value: string; label: string }[] }
+  | { type: 'simple' };
+
+export type ProjectStatus = 'shipped' | 'hackathon' | 'archived' | 'wip';
+
+export type Project = {
+  slug: string;
   title: string;
+  year: string;
   description: string;
-  techStack: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  imageUrl?: string;
-  impact?: string;
-}
+  tags: string[];
+  github?: string;
+  live?: string;
+  display: ProjectDisplay;
+  status?: ProjectStatus;
+  featured: boolean;
+};
 
 export const projects: Project[] = [
-  // --- Deployed ---
+  // ── Featured ────────────────────────────────────────────────────────────────
   {
-    id: 7,
-    title: "Internship Matcher",
-    description: "Full-stack internship matching platform that ingests 1,000+ postings, parses resumes with LLMs, and ranks roles using semantic matching with caching and daily refreshes.",
-    techStack: ["FastAPI", "React", "AWS EC2", "AWS S3", "Redis", "SQLite", "LLM Resume Parsing"],
-    githubUrl: "https://github.com/shirinalapati/Internship-App/",
-    liveUrl: "https://internshipmatcher.com",
-    impact: "Drove over 10,000 impressions on LinkedIn and got over 100 active users.",
+    slug: 'internship-matcher',
+    title: 'Internship Matcher',
+    year: '2024 → now',
+    description:
+      'Full-stack platform that scrapes 1,000+ internship postings, parses resumes with LLMs, and semantically ranks roles — preventing keyword mismatch rejections.',
+    tags: ['FastAPI', 'React', 'AWS EC2', 'Redis', 'Claude API'],
+    github: 'https://github.com/shirinalapati/Internship-App/',
+    live: 'https://internshipmatcher.com',
+    display: {
+      type: 'scoreboard',
+      stats: [
+        { value: '1k+', label: 'Postings indexed' },
+        { value: '90%', label: 'Faster retrieval via cache' },
+        { value: '52%', label: 'Faster match, parallel LLM' },
+        { value: '100+', label: 'Active users' },
+      ],
+    },
+    status: 'shipped',
+    featured: true,
   },
   {
-    id: 1,
-    title: "Calgentic",
-    description: "AI-powered calendar assistant that helps users manage their time more effectively by analyzing schedules and suggesting optimizations.",
-    techStack: ["GPT-4o", "Google Calendar API", "TypeScript", "Shadcn UI", "Python", "Flask", "Google Auth"],
-    githubUrl: "https://github.com/Sujan30/calgentic-UI",
-    liveUrl: "https://calgentic.com",
-    impact: "35,000+ impressions across Instagram and TikTok. ~20 monthly active users.",
+    slug: 'calgentic',
+    title: 'Calgentic',
+    year: '2024 · shipped',
+    description:
+      'AI-powered calendar assistant that analyzes schedules and suggests optimizations. Drove organic distribution across short-form video before flipping to product growth.',
+    tags: ['GPT-4o', 'Google Calendar', 'TypeScript', 'Flask'],
+    github: 'https://github.com/Sujan30/calgentic-UI',
+    live: 'https://calgentic.com',
+    display: {
+      type: 'sidebar',
+      stats: [
+        { value: '35k', label: 'Impressions — TikTok + IG' },
+        { value: '~20', label: 'Monthly active users' },
+        { value: '100%', label: 'Solo built + shipped' },
+      ],
+    },
+    status: 'shipped',
+    featured: true,
   },
   {
-    id: 8,
-    title: "Viralize — Marketing AI Agent",
-    description: "End-to-end social media content generator that researches a company website, writes targeted scripts, and produces short-form videos optimized for TikTok/Instagram.",
-    techStack: ["Playwright", "LangChain", "FastAPI", "Research Agents", "Video Generation"],
-    liveUrl: "https://www.linkedin.com/pulse/lindy-30-ai-hack-recap-sf-august-2025-michael-raspuzzi-oma8c/",
-    impact: "Built in ~6 hours. Reduced marketing workflow from 30+ min to ~3 min. Won 2nd place (\"Coolest Build\") out of 35 teams.",
+    slug: 'viralize',
+    title: 'Viralize',
+    year: '2024 · hackathon',
+    description:
+      'Marketing AI agent that researches a company website, writes targeted scripts, and produces short-form videos optimized for TikTok/Instagram.',
+    tags: ['Playwright', 'LangChain', 'FastAPI', 'Research Agents'],
+    live: 'https://www.linkedin.com/pulse/lindy-30-ai-hack-recap-sf-august-2025-michael-raspuzzi-oma8c/',
+    display: {
+      type: 'transform',
+      before: '30+ min',
+      after: '~3 min',
+      caption: 'marketing workflow, end to end',
+      subStats: [
+        { value: '6h', label: 'Build time' },
+        { value: '2nd', label: 'of 35 teams' },
+      ],
+    },
+    status: 'hackathon',
+    featured: true,
+  },
+  {
+    slug: 'cold-leads',
+    title: 'Cold Leads',
+    year: '2025 → now',
+    description:
+      'AI outreach system for real estate agents. Texts prospects via SMS, qualifies leads through natural conversation, and books 30-minute calls into Cal.com — no human in the loop until escalation.',
+    tags: ['FastAPI', 'PostgreSQL', 'Claude', 'Linq SMS', 'Cal.com', 'APScheduler'],
+    github: 'https://github.com/Sujan30/cold-leads',
+    display: {
+      type: 'scoreboard',
+      stats: [
+        { value: '8', label: 'States in machine' },
+        { value: '6', label: 'Intent types classified' },
+        { value: '30min', label: 'Auto-booked calls' },
+        { value: '0', label: 'Humans needed until escalation' },
+      ],
+    },
+    status: 'wip',
+    featured: true,
+  },
+  {
+    slug: 'sleep-psg',
+    title: 'Sleep-PSG Scoring',
+    year: '2025 · research',
+    description:
+      'Research-grade EEG sleep stage classifier. Preprocesses raw EDF files into NPZ artifacts, trains LDA and RandomForest models, and streams real-time predictions over WebSocket — 250-sample chunks auto-assembled into 30-second epochs with confidence scores.',
+    tags: ['FastAPI', 'ARQ', 'Redis', 'WebSocket', 'Docker', 'LDA', 'RandomForest'],
+    github: 'https://github.com/Sujan30/bci-project',
+    display: {
+      type: 'hero',
+      metric: '98%',
+      metricLabel:
+        'reduction in annotation time — from 2+ hours of manual scoring to under 2 minutes per recording.',
+      subStat: '53.6% balanced accuracy on 8,281 epochs (3 nights of data)',
+    },
+    status: 'shipped',
+    featured: true,
+  },
+  {
+    slug: 'sjsu-dashboards',
+    title: 'SJSU Engineering Dashboards',
+    year: '2025 · internship',
+    description:
+      'Python wrapper around Grafanalib for server performance monitoring. Replaced verbose manual time-series configs with a reusable dashboard generator — migrated 7+ dashboards.',
+    tags: ['Python', 'Grafanalib', 'Time-series'],
+    github: 'https://github.com/Sujan30/python-dashboard-for-sce',
+    display: {
+      type: 'transform',
+      before: '30+ lines',
+      after: '~5 lines',
+      caption: 'per dashboard definition',
+      subStats: [{ value: '83%', label: 'Codebase reduction' }],
+    },
+    status: 'shipped',
+    featured: true,
   },
 
-  // --- Not deployed, ordered by last pushed ---
+  // ── Archive ──────────────────────────────────────────────────────────────────
   {
-    id: 10,
-    title: "Cold Leads",
-    description: "Automated AI outreach system for real estate agents. Texts prospects as an AI assistant, qualifies leads through natural SMS conversation, and books 30-minute calls directly into the agent's Cal.com calendar — no human in the loop until escalation is needed.",
-    techStack: ["FastAPI", "PostgreSQL", "Claude Haiku/Sonnet", "Linq SMS", "Cal.com API", "SendGrid", "APScheduler", "SQLAlchemy"],
-    githubUrl: "https://github.com/Sujan30/cold-leads",
-    impact: "8-state lead state machine with a 6-intent classifier. Handles scheduling, time filtering, 10-second message debounce, and automatic human escalation alerts.",
+    slug: 'phylogenetic-tree',
+    title: 'Phylogenetic Tree Comparison',
+    year: '2026 · coursework',
+    description:
+      'Bioinformatics study comparing UPGMA, Neighbor-Joining, and Maximum Likelihood for evolutionary trees. Fetches vertebrate COX1 sequences from NCBI GenBank, aligns with MAFFT, evaluates using Robinson-Foulds distance.',
+    tags: ['Python', 'MAFFT', 'FastTree', 'NCBI GenBank', 'BioPython'],
+    github: 'https://github.com/Sujan30/CS123A-final-project',
+    display: { type: 'simple' },
+    status: 'shipped',
+    featured: false,
   },
   {
-    id: 11,
-    title: "Phylogenetic Tree Comparison",
-    description: "Bioinformatics study comparing UPGMA, Neighbor-Joining, and Maximum Likelihood for constructing evolutionary trees. Automatically fetches vertebrate COX1 gene sequences from NCBI GenBank, aligns them with MAFFT, and evaluates tree quality using Robinson-Foulds distance.",
-    techStack: ["Python", "MAFFT", "FastTree", "NCBI GenBank", "BioPython"],
-    githubUrl: "https://github.com/Sujan30/CS123A-final-project",
-    impact: "Benchmarked all three algorithms across 15–150 sequences. Written to be accessible to non-programmer bioinformaticians.",
+    slug: 'docs-mcp',
+    title: 'Google Docs & Calendar MCP Server',
+    year: '2025',
+    description:
+      'Custom MCP server using FastMCP + Google APIs. Lets AI agents read and modify Docs and Calendar events. Published with docs and a deployment tutorial.',
+    tags: ['Python', 'FastMCP', 'Google APIs'],
+    github: 'https://github.com/Sujan30/docs-mcp-server',
+    display: { type: 'simple' },
+    status: 'shipped',
+    featured: false,
   },
   {
-    id: 9,
-    title: "Sleep-PSG Scoring",
-    description: "Research-grade EEG sleep stage classifier that takes raw EDF files through a preprocessing pipeline (filtered epochs → NPZ artifacts with checksums), trains LDA and RandomForest models, and streams real-time predictions over WebSocket — auto-assembling 250-sample chunks into 30-second epochs with confidence scores and latency metrics.",
-    techStack: ["FastAPI", "ARQ", "Redis", "WebSocket", "Docker", "LDA", "RandomForest"],
-    githubUrl: "https://github.com/Sujan30/bci-project",
-    impact: "Fault-tolerant ARQ worker queue with Redis fallback. Full observability: health checks, structured JSON logging, per-request X-Request-ID tracing. 53.6% balanced accuracy on 8,281 epochs (3 nights of data).",
+    slug: 'canvas-agent',
+    title: 'Canvas AI Agent',
+    year: '2025',
+    description:
+      'Accesses Canvas assignments, checks drafts against rubrics, and uses Browseruse + Gemini to detect AI-generated content via Quillbot — simulating a teacher grading session.',
+    tags: ['Python', 'Playwright', 'Browseruse', 'GPT-4o', 'Gemini 2.0 Flash'],
+    github: 'https://github.com/Sujan30/canvas-ai-agent',
+    display: { type: 'simple' },
+    status: 'archived',
+    featured: false,
   },
   {
-    id: 2,
-    title: "Google Docs & Calendar MCP Server",
-    description: "Custom MCP server using FastMCP alongside the Google Calendar and Docs APIs, letting AI agents read and modify documents and calendar events. Shipped with docs and a deployment tutorial.",
-    techStack: ["Python", "FastMCP", "Google Calendar API", "Google Docs API"],
-    githubUrl: "https://github.com/Sujan30/docs-mcp-server",
-    impact: "2,000+ social media impressions. ~6 unique external users.",
+    slug: 'eli5',
+    title: 'Explain Like I\'m 5',
+    year: '2024',
+    description:
+      'Platform that simplifies complex topics using AI to make them accessible regardless of background knowledge. 250+ visits/month over 4 months.',
+    tags: ['Flask', 'OpenAI', 'Python'],
+    github: 'https://github.com/Sujan30/Eli5',
+    display: { type: 'simple' },
+    status: 'archived',
+    featured: false,
   },
   {
-    id: 6,
-    title: "Canvas AI Agent",
-    description: "Tool that accesses Canvas assignments, checks student drafts against rubrics, and uses Browseruse + Gemini to detect AI-generated content via Quillbot — simulating a teacher grading session.",
-    techStack: ["Python", "Playwright", "Browseruse", "GPT-4o", "Gemini 2.0 Flash"],
-    githubUrl: "https://github.com/Sujan30/canvas-ai-agent",
-    impact: "5,000+ TikTok impressions. Not deployed due to Canvas policy constraints.",
-  },
-  {
-    id: 3,
-    title: "Explain Like I'm 5 (ELI5)",
-    description: "Platform that simplifies complex topics using AI to make them accessible regardless of background knowledge.",
-    techStack: ["Flask", "OpenAI", "Python"],
-    githubUrl: "https://github.com/Sujan30/Eli5",
-    impact: "250+ visits per month sustained over 4 months.",
-  },
-  {
-    id: 4,
-    title: "Twitter Bot for ELI5",
-    description: "Automated Twitter bot that shared ELI5 content to grow platform reach. Lived a memorable 2-month run before getting banned.",
-    techStack: ["Flask", "Tweepy", "Python"],
-    githubUrl: "https://github.com/Sujan30/Eli5",
-    impact: "800+ impressions before the ban. A cautionary tale in rate-limit respect.",
+    slug: 'eli5-bot',
+    title: 'Twitter Bot for ELI5',
+    year: '2024',
+    description:
+      'Automated Twitter bot that shared ELI5 content to grow platform reach. Lived a memorable 2-month run before getting banned. A cautionary tale in rate-limit respect.',
+    tags: ['Flask', 'Tweepy', 'Python'],
+    github: 'https://github.com/Sujan30/Eli5',
+    display: { type: 'simple' },
+    status: 'archived',
+    featured: false,
   },
 ];

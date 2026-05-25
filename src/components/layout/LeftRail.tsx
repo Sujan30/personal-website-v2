@@ -20,17 +20,25 @@ export default function LeftRail({ activeSection, className = '' }: LeftRailProp
 
   return (
     <aside className={`flex flex-col justify-between ${className}`}>
-      {/* Identity + nav */}
       <div>
         {/* Name */}
-        <h1 className="font-serif italic text-[48px] leading-none text-foreground tracking-tight">
-          Sujan
+        <h1 className="font-serif italic text-[52px] leading-none text-text-primary tracking-tight">
+          Sujan Nandikol Sunilkumar
         </h1>
-        <p className="mt-3 text-sm font-semibold text-foreground">
-          Software Engineer
+        <p className="mt-3 text-[18px] font-medium text-text-primary">
+          CS @ SJSU
         </p>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[220px]">
-          Building at the intersection of neurotech and AI.
+        <p className="mt-2 text-[15px] leading-relaxed text-text-secondary max-w-xs">
+          I build AI agents and ship them. Currently building{' '}
+          <a
+            href="https://internshipmatcher.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-hover transition-colors"
+          >
+            Internship Matcher
+          </a>
+          .
         </p>
 
         {/* Section nav */}
@@ -44,19 +52,18 @@ export default function LeftRail({ activeSection, className = '' }: LeftRailProp
                 className={[
                   'flex items-center gap-4 py-2 text-xs font-semibold tracking-widest uppercase transition-all duration-200 text-left',
                   isActive
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground',
+                    ? 'text-text-primary'
+                    : 'text-text-tertiary hover:text-text-primary',
                 ].join(' ')}
               >
-                {/* Animated line indicator */}
                 <span
                   className={[
                     'block h-px flex-shrink-0 transition-all duration-300',
-                    isActive ? 'w-10 bg-sky-400' : 'w-5 bg-muted-foreground/50',
+                    isActive ? 'w-12 bg-accent' : 'w-6 bg-text-tertiary/50',
                   ].join(' ')}
                   aria-hidden
                 />
-                <span className={isActive ? 'text-sky-400' : ''}>{label}</span>
+                <span className={isActive ? 'text-accent' : ''}>{label}</span>
               </button>
             );
           })}

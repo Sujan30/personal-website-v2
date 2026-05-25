@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section id="about" className="py-16 lg:py-24">
-      <p className="mb-4 text-xs font-semibold tracking-widest uppercase text-sky-400 lg:hidden">
+      <p className="mb-4 text-xs font-semibold tracking-widest uppercase text-accent lg:hidden">
         About
       </p>
 
@@ -18,8 +18,8 @@ export default function About() {
           and a matcha connoisseur. During my free time, I like to intertwine my hobbies with AI and create dumb things like:
         </p>
 
-        <div className="space-y-4 pl-4 border-l border-sky-400/40">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sky-400/70 -mb-1">
+        <div className="space-y-4 pl-4 border-l border-accent/40">
+          <p className="text-xs font-semibold tracking-widest uppercase text-accent/70 -mb-1">
             Personal Projects
           </p>
           <div>
@@ -45,7 +45,7 @@ export default function About() {
                 'A streak tracker to track your goals such as going to the gym, reading, coding, etc.',
               ].map((step, i) => (
                 <li key={i} className="flex gap-2 text-[13px] leading-relaxed">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-sky-400/60" />
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
                   {step}
                 </li>
               ))}
@@ -61,7 +61,7 @@ export default function About() {
         </p>
         <p className="text-foreground">
           Currently:{' '}
-          <span className="text-sky-400">
+          <span className="text-accent">
             working on cold-leads, BreakUP.
           </span>
         </p>
