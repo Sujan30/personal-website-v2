@@ -47,7 +47,10 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					hover: '#7DD3FC',
+					bg: 'rgba(56,189,248,0.12)',
+					pill: '#BAE6FD',
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -56,6 +59,14 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Direct design tokens for project components
+				bg: '#09090B',
+				surface: '#111113',
+				text: {
+					primary: '#E2E8F0',
+					secondary: '#94A3B8',
+					tertiary: '#64748B',
 				},
 			},
 			borderRadius: {
@@ -66,7 +77,7 @@ export default {
 			fontFamily: {
 				sans:  ['Inter', 'system-ui', 'sans-serif'],
 				serif: ['"Instrument Serif"', 'Georgia', 'serif'],
-				mono:  ['"Geist Mono"', '"Fira Code"', 'monospace'],
+				mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
 			},
 			keyframes: {
 				'accordion-down': {
