@@ -2,10 +2,13 @@ name: Sync project READMEs
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # daily noon UTC
+    - cron: '0 10 * * *'   # daily noon UTC
   workflow_dispatch:
   repository_dispatch:
     types: [project-readme-updated]
+
+permissions:
+  contents: write
 
 jobs:
   sync:
