@@ -1,3 +1,5 @@
+import _generatedRaw from './projects.generated.json';
+
 export type ProjectDisplay =
   | { type: 'hero'; metric: string; metricLabel: string; subStat?: string }
   | { type: 'sidebar'; stats: { value: string; label: string }[] }
@@ -20,16 +22,16 @@ export type Project = {
   featured: boolean;
 };
 
-export const projects: Project[] = [
+const _static: Project[] = [
   // ── Featured ────────────────────────────────────────────────────────────────
   {
     slug: 'internship-matcher',
     title: 'Internship Matcher',
     year: '2024 → now',
     description:
-      'Full-stack platform that scrapes 1,000+ internship postings, parses resumes with LLMs, and semantically ranks roles — preventing keyword mismatch rejections.',
-    tags: ['FastAPI', 'React', 'AWS EC2', 'Redis', 'Claude API'],
-    github: 'https://github.com/shirinalapati/Internship-App/',
+      'Get automatic tailored jobs to your resume --> tailor your resume to pass ATS --> apply easily. built for cs students by a cs student.',
+    tags: ['FastAPI', 'React 19', 'Redis', 'Supabase', 'Claude API', 'AWS S3', 'Railway'],
+    github: 'https://github.com/internship-app1/Internship-App#',
     live: 'https://internshipmatcher.com',
     display: {
       type: 'scoreboard',
@@ -202,4 +204,10 @@ export const projects: Project[] = [
     status: 'archived',
     featured: false,
   },
+];
+
+const _staticSlugs = new Set(_static.map(p => p.slug));
+export const projects: Project[] = [
+  ..._static,
+  ...(_generatedRaw as unknown as Project[]).filter(p => !_staticSlugs.has(p.slug)),
 ];

@@ -62,7 +62,7 @@ export default function About() {
         <p className="text-foreground">
           Currently:{' '}
           <span className="text-accent">
-            working on cold-leads, BreakUP.
+            working on Internship matcher, cold-leads, BreakUP.
           </span>
         </p>
       </div>
