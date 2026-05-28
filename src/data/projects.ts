@@ -29,9 +29,9 @@ const _static: Project[] = [
     title: 'Internship Matcher',
     year: '2024 → now',
     description:
-      'FastAPI + React 19 platform with an 8-stage SSE matching pipeline — dual-model Claude strategy (Haiku for extraction, Sonnet for deep re-ranking), 3-tier cache (Redis → Postgres → in-memory), Clerk auth, S3 resume storage, and LaTeX resume tailoring — v2 shipped May 2026.',
+      'Get automatic tailored jobs to your resume --> tailor your resume to pass ATS --> apply easily. built for cs students by a cs student.',
     tags: ['FastAPI', 'React 19', 'Redis', 'Supabase', 'Claude API', 'AWS S3', 'Railway'],
-    github: 'https://github.com/shirinalapati/Internship-App/',
+    github: 'https://github.com/internship-app1/Internship-App#',
     live: 'https://internshipmatcher.com',
     display: {
       type: 'scoreboard',
