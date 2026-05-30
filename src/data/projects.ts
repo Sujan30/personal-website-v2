@@ -27,7 +27,7 @@ const _static: Project[] = [
   {
     slug: 'internship-matcher',
     title: 'Internship Matcher',
-    year: '2024 → now',
+    year: '2025 → now',
     description:
       'Get automatic tailored jobs to your resume --> tailor your resume to pass ATS --> apply easily. built for cs students by a cs student.',
     tags: ['FastAPI', 'React 19', 'Redis', 'Supabase', 'Claude API', 'AWS S3', 'Railway'],
@@ -48,7 +48,7 @@ const _static: Project[] = [
   {
     slug: 'calgentic',
     title: 'Calgentic',
-    year: '2024 · shipped',
+    year: '2025 · shipped',
     description:
       'AI-powered calendar assistant that analyzes schedules and suggests optimizations. Drove organic distribution across short-form video before flipping to product growth.',
     tags: ['GPT-4o', 'Google Calendar', 'TypeScript', 'Flask'],
@@ -68,7 +68,7 @@ const _static: Project[] = [
   {
     slug: 'viralize',
     title: 'Viralize',
-    year: '2024 · hackathon',
+    year: '2025 · hackathon',
     description:
       'Marketing AI agent that researches a company website, writes targeted scripts, and produces short-form videos optimized for TikTok/Instagram.',
     tags: ['Playwright', 'LangChain', 'FastAPI', 'Research Agents'],
@@ -89,7 +89,7 @@ const _static: Project[] = [
   {
     slug: 'cold-leads',
     title: 'Cold Leads',
-    year: '2025 → now',
+    year: '2026 → now',
     description:
       'AI outreach system for real estate agents. Texts prospects via SMS, qualifies leads through natural conversation, and books 30-minute calls into Cal.com — no human in the loop until escalation.',
     tags: ['FastAPI', 'PostgreSQL', 'Claude', 'Linq SMS', 'Cal.com', 'APScheduler'],
@@ -109,7 +109,7 @@ const _static: Project[] = [
   {
     slug: 'sleep-psg',
     title: 'Sleep-PSG Scoring',
-    year: '2025 · research',
+    year: '2026 · research',
     description:
       'Research-grade EEG sleep stage classifier. Preprocesses raw EDF files into NPZ artifacts, trains LDA and RandomForest models, and streams real-time predictions over WebSocket — 250-sample chunks auto-assembled into 30-second epochs with confidence scores.',
     tags: ['FastAPI', 'ARQ', 'Redis', 'WebSocket', 'Docker', 'LDA', 'RandomForest'],
@@ -183,7 +183,7 @@ const _static: Project[] = [
   {
     slug: 'eli5',
     title: 'Explain Like I\'m 5',
-    year: '2024',
+    year: '2025',
     description:
       'Platform that simplifies complex topics using AI to make them accessible regardless of background knowledge. 250+ visits/month over 4 months.',
     tags: ['Flask', 'OpenAI', 'Python'],
@@ -195,7 +195,7 @@ const _static: Project[] = [
   {
     slug: 'eli5-bot',
     title: 'Twitter Bot for ELI5',
-    year: '2024',
+    year: '2025',
     description:
       'Automated Twitter bot that shared ELI5 content to grow platform reach. Lived a memorable 2-month run before getting banned. A cautionary tale in rate-limit respect.',
     tags: ['Flask', 'Tweepy', 'Python'],
